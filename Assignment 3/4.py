@@ -8,10 +8,10 @@ df2.rename(columns={
     "car name": "name"
 }, inplace=True)
 
-merged_df = pd.merge(df1, df2, on="mpg")
+inner_join = pd.merge(df1, df2, on="mpg", how="inner")
 
-print("Merged DataFrame")
-print(merged_df)
+print("Inner Join")
+print(inner_join)
 
-print("\nShape of Merged DataFrame:")
-print(merged_df.shape)
+print("\nShape:")
+print(inner_join.shape)
