@@ -1,0 +1,422 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNISzSxv4WbJF8GWBTo1kAF",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Geo-red/Eda/blob/main/Assignment%201/10%20Basic%20codes\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lpXZ-tcCkqhL",
+        "outputId": "a9573847-7dc5-4e5b-e4af-7f1a5a6197ce"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter student name: Geo\n",
+            "Enter marks for Subject 1: 30\n",
+            "Enter marks for Subject 2: 9\n",
+            "Enter marks for Subject 3: 0\n",
+            "Enter marks for Subject 4: 80\n",
+            "Enter marks for Subject 5: 57\n",
+            "Student Name: Geo\n",
+            "Total: 176.0\n",
+            "Average: 35.2\n",
+            "Percentage: 35.2 %\n"
+          ]
+        }
+      ],
+      "source": [
+        "name = input(\"Enter student name: \")\n",
+        "\n",
+        "total = 0\n",
+        "for i in range(1,6):\n",
+        "    marks = float(input(f\"Enter marks for Subject {i}: \"))\n",
+        "    total += marks\n",
+        "\n",
+        "average = total/5\n",
+        "percentage = average\n",
+        "\n",
+        "print(\"Student Name:\", name)\n",
+        "print(\"Total:\", total)\n",
+        "print(\"Average:\", average)\n",
+        "print(\"Percentage:\", percentage,\"%\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=int(input(\"Enter first number: \"))\n",
+        "b=int(input(\"Enter second number: \"))\n",
+        "c=int(input(\"Enter third number: \"))\n",
+        "\n",
+        "if a>=b and a>=c:\n",
+        "    print(a)\n",
+        "elif b>=a and b>=c:\n",
+        "    print(b)\n",
+        "else:\n",
+        "    print(c)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ntj9SzFgk5Co",
+        "outputId": "178ec020-8544-4052-8776-fd42a70173a9"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter first number: 3\n",
+            "Enter second number: 4\n",
+            "Enter third number: 5\n",
+            "5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "n=int(input(\"Enter number of terms: \"))\n",
+        "a=0\n",
+        "b=1\n",
+        "for i in range(n):\n",
+        "    print(a,end=\" \")\n",
+        "    c=a+b\n",
+        "    a=b\n",
+        "    b=c"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SONLfyXdk7Ln",
+        "outputId": "90ca6689-54a6-4741-c21d-cfd92e128a8b"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter number of terms: 31\n",
+            "0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765 10946 17711 28657 46368 75025 121393 196418 317811 514229 832040 "
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def is_prime(num):\n",
+        "    if num<=1:\n",
+        "        return False\n",
+        "    for i in range(2,int(num**0.5)+1):\n",
+        "        if num%i==0:\n",
+        "            return False\n",
+        "    return True\n",
+        "\n",
+        "for i in range(1,101):\n",
+        "    if is_prime(i):\n",
+        "        print(i,end=\" \")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1DYJpBH9k8oP",
+        "outputId": "8121a706-69bf-4d15-957d-4b4b0143a194"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 "
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "text=input(\"Enter a string: \")\n",
+        "\n",
+        "v=c=d=s=0\n",
+        "\n",
+        "for ch in text:\n",
+        "    if ch.lower() in \"aeiou\":\n",
+        "        v+=1\n",
+        "    elif ch.isalpha():\n",
+        "        c+=1\n",
+        "    elif ch.isdigit():\n",
+        "        d+=1\n",
+        "    else:\n",
+        "        s+=1\n",
+        "\n",
+        "print(\"Vowels:\",v)\n",
+        "print(\"Consonants:\",c)\n",
+        "print(\"Digits:\",d)\n",
+        "print(\"Special:\",s)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sdZQbnJok-83",
+        "outputId": "86c21e68-f865-4623-d360-4b79ad68fcb5"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a string: Malayalam\n",
+            "Vowels: 4\n",
+            "Consonants: 5\n",
+            "Digits: 0\n",
+            "Special: 0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "numbers=list(map(int,input(\"Enter numbers: \").split()))\n",
+        "\n",
+        "unique=[]\n",
+        "for num in numbers:\n",
+        "    if num not in unique:\n",
+        "        unique.append(num)\n",
+        "\n",
+        "print(unique)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0IwgvQl-lBG_",
+        "outputId": "815767a4-a0b9-4399-e96e-8f662cf8f9ca"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter numbers: 5 6 7 8 2\n",
+            "[5, 6, 7, 8, 2]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "students={}\n",
+        "n=int(input(\"Enter number of students: \"))\n",
+        "\n",
+        "for i in range(n):\n",
+        "    name=input(\"Enter name: \")\n",
+        "    marks=int(input(\"Enter marks: \"))\n",
+        "    students[name]=marks\n",
+        "\n",
+        "highest=-1\n",
+        "topper=\"\"\n",
+        "\n",
+        "for name in students:\n",
+        "    if students[name]>highest:\n",
+        "        highest=students[name]\n",
+        "        topper=name\n",
+        "\n",
+        "print(topper, highest)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Q5Egz1-6lDKQ",
+        "outputId": "7721705d-fd40-47cd-8135-04bee4f05959"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter number of students: 2\n",
+            "Enter name: r\n",
+            "Enter marks: 45\n",
+            "Enter name: w\n",
+            "Enter marks: 31\n",
+            "r 45\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "file=open(\"data.txt\",\"w\")\n",
+        "\n",
+        "for i in range(5):\n",
+        "    file.write(input(\"Enter line: \")+\"\\n\")\n",
+        "file.close()\n",
+        "\n",
+        "file=open(\"data.txt\",\"r\")\n",
+        "content=file.readlines()\n",
+        "\n",
+        "lines=len(content)\n",
+        "words=0\n",
+        "chars=0\n",
+        "\n",
+        "for line in content:\n",
+        "    words+=len(line.split())\n",
+        "    chars+=len(line)\n",
+        "\n",
+        "file.close()\n",
+        "\n",
+        "print(lines)\n",
+        "print(words)\n",
+        "print(chars)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xNAlEpF3lIqX",
+        "outputId": "127d7451-56aa-41b7-e296-220d92a5b8ed"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter line: tnjkilnfklqwbhjwbqyub\n",
+            "Enter line: bdhwqbhdjwq\n",
+            "Enter line: d2qwd23\n",
+            "Enter line: fwecwqed\n",
+            "Enter line: d\n",
+            "5\n",
+            "5\n",
+            "53\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Employee:\n",
+        "    def __init__(self,id,name,salary):\n",
+        "        self.id=id\n",
+        "        self.name=name\n",
+        "        self.salary=salary\n",
+        "\n",
+        "    def display(self):\n",
+        "        print(self.id,self.name,self.salary)\n",
+        "\n",
+        "    def increase_salary(self,p):\n",
+        "        self.salary=self.salary+(self.salary*p/100)\n",
+        "\n",
+        "emp=Employee(101,\"John\",50000)\n",
+        "emp.display()\n",
+        "emp.increase_salary(10)\n",
+        "emp.display()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CvgZo4wFlMIH",
+        "outputId": "d8a9fd0b-b98f-4843-eb56-a54bdce6c45c"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "101 John 50000\n",
+            "101 John 55000.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "try:\n",
+        "    a=float(input(\"Enter first number: \"))\n",
+        "    b=float(input(\"Enter second number: \"))\n",
+        "\n",
+        "    result=a/b\n",
+        "    print(result)\n",
+        "\n",
+        "except ZeroDivisionError:\n",
+        "    print(\"Division by zero is not allowed.\")\n",
+        "\n",
+        "except ValueError:\n",
+        "    print(\"Enter valid numbers.\")\n",
+        "\n",
+        "except Exception as e:\n",
+        "    print(\"Unexpected error:\",e)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3jpEfOVLlNHn",
+        "outputId": "1de38725-4101-4317-96d7-523b8094e3ab"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter first number: 3\n",
+            "Enter second number: 4\n",
+            "0.75\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
